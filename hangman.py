@@ -25,17 +25,11 @@ def chooseWord(wordlist):
     return random.choice(wordlist)
 
 def isWordGuessed(secretWord, lettersGuessed):
-    # Separating out each character from the secretWord
-    # Each character is stored only once
-    secretLetters = {};
-    for letter in secretWord:
-        secretLetters[letter] = True;
-
     # Checking for the non-existence of any character from the secretWord
     # The result is stored as True of False
     result = True;
-    for sl in secretLetters:
-        if not sl in lettersGuessed:
+    for secretLetter in secretWord:
+        if not secretLetter in lettersGuessed:
             result = False;
             break;
     return result;
